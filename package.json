@@ -1,9 +1,31 @@
 {
+  "name": "unichat",
+  "version": "1.0.0",
+  "description": "现代化移动端 Web3 社交平台",
   "private": true,
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "web3",
+    "mobile",
+    "social",
+    "chat",
+    "defi",
+    "blockchain"
+  ],
+  "author": "UniChat Team",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",

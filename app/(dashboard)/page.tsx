@@ -116,7 +116,7 @@ export default function ChatPage() {
       </div>
 
       {/* 搜索栏和操作按钮 */}
-      <div className="pr-3 pb-3 bg-gray-50 border-b border-gray-200 bg-white text-right">
+      <div className="pr-3 pb-3 bg-white border-b border-gray-200 text-right">
         <button className="p-2 rounded-full mr-2">
           <Search size={18} />
         </button>
