@@ -1,0 +1,208 @@
+'use client';
+
+import { useState } from 'react';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import {
+  Search,
+  CirclePlus,
+  ChevronRight,
+  Camera,
+  Play,
+  BrainCircuit,
+  Layers,
+  BarChart3,
+  Cpu,
+  Briefcase,
+  Gamepad2,
+  Box
+} from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+
+interface DiscoverItem {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+  subtitle?: string;
+  avatar?: string;
+  badgeCount?: number;
+  image?: string;
+  type?: string;
+}
+
+const discoverItems: DiscoverItem[] = [
+  {
+    id: 'circle',
+    title: 'Supply and demand circle',
+    subtitle: 'lenono',
+    icon: (
+      <Image src="/discover/Moment.png" alt="Moment" width={30} height={30} />
+    ),
+    type: 'group',
+    badgeCount: 8
+  },
+  {
+    id: 'video',
+    title: 'Video',
+    subtitle: 'video',
+    icon: (
+      <Image src="/discover/video.png" alt="video" width={30} height={30} />
+    ),
+    image: '/shop/promo.png',
+    badgeCount: 9
+  },
+  {
+    id: 'ai',
+    title: 'AI',
+    subtitle: 'back',
+    icon: <Image src="/discover/ai.png" alt="ai" width={30} height={30} />,
+    type: 'group'
+    // badgeCount: 1
+  },
+  {
+    id: 'bridge',
+    title: 'Arbitrum cross-chain bridge',
+    icon: <Image src="/discover/arbitrum.png" alt="ai" width={30} height={30} />
+  },
+  {
+    id: 'exchange',
+    title: 'Uniswap.org exchange',
+    icon: (
+      <Image src="/discover/uniswap.png" alt="uniswap" width={30} height={30} />
+    ),
+    type: 'group'
+  },
+  {
+    id: 'gold',
+    title: 'Gold bar transaction',
+    icon: <Image src="/discover/gold.png" alt="gold" width={30} height={30} />
+  },
+  {
+    id: 'mining',
+    title: 'BTC /ETH mining machine',
+    icon: <Image src="/discover/btc.png" alt="btc" width={30} height={30} />,
+    type: 'group'
+  },
+  {
+    id: 'jobs',
+    title: 'Job opportunities',
+    icon: <Image src="/discover/job.png" alt="job" width={30} height={30} />
+  },
+  {
+    id: 'games',
+    title: 'Chain games',
+    subtitle: 'GANME',
+    icon: (
+      <Image src="/discover/chain.png" alt="chain" width={30} height={30} />
+    ),
+    type: 'group',
+    image: '/shop/airdrop.png'
+  },
+  {
+    id: 'drapp',
+    title: 'Drapp strict selection ecology',
+    icon: <Image src="/discover/drapp.png" alt="drapp" width={30} height={30} />
+  }
+];
+
+export default function DiscoverPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  return (
+    <div className="flex flex-col h-full">
+      {/* 顶部导航 */}
+      <div className="flex justify-evenly items-center p-4 bg-white">
+        <Button variant="outline" className="px-4 py-1 text-sm">
+          <Image
+            src="/top/bnb.png"
+            alt="usa"
+            className="object-cover mr-1"
+            width={19}
+            height={19}
+          />
+          BNB Chain
+        </Button>
+        <Button variant="outline" className="px-4 py-1 text-sm">
+          Connect wallet
+        </Button>
+        <Button variant="outline" className="flex items-center space-x-1">
+          <div className="inline-block align-middle mr-1 w-4 h-4 rounded-full overflow-hidden">
+            <Image
+              src="/top/usa.png"
+              alt="usa"
+              className="w-full h-full object-cover"
+              width={20}
+              height={20}
+            />
+          </div>
+          <span className="text-sm">USA</span>
+        </Button>
+      </div>
+
+      {/* 搜索栏 */}
+      {/* <div className="p-3 bg-gray-50 border-b border-gray-200 bg-white text-right">
+        <button className="p-2  rounded-full mr-2">
+          <Search size={18} />
+        </button>
+        <button className="p-2 rounded-full">
+          <CirclePlus size={18} />
+        </button>
+      </div> */}
+
+      {/* 发现列表 */}
+      <div className="flex-1 overflow-y-auto">
+        {discoverItems.map((item) => (
+          <div
+            key={item.id}
+            className={`overflow-hidden bg-white ${item.type && 'mb-2'}`}
+          >
+            <div className="flex relative items-center p-4 cursor-pointer hover:bg-gray-50">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full mr-3">
+                {item.icon}
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center justify-between pr-2">
+                  <h3 className="font-medium text-base mr-2 truncate">
+                    {item.title}
+                  </h3>
+                  <div className="relative">
+                    {item.subtitle && (
+                      <div className="text-sm text-gray-500 mt-0.5 flex items-center">
+                        {item.subtitle}
+                        {item.image && (
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            className="object-cover ml-1"
+                            width={25}
+                            height={25}
+                          />
+                        )}
+                      </div>
+                    )}
+                    {item.badgeCount !== undefined && (
+                      <Badge
+                        variant="destructive"
+                        className="rounded-full p-0 absolute top-[1px] right-[-18px] h-4 w-4 min-w-[16px] text-[10px] flex items-center justify-center"
+                      >
+                        {item.badgeCount > 9 ? '9+' : item.badgeCount}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <ChevronRight className="h-5 w-5 text-gray-400 ml-2" />
+              {/* 下边框 */}
+              {!item.type && (
+                <div className="border-t w-[calc(100%-4rem)] border-border absolute bottom-0 right-0"></div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
