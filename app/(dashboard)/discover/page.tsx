@@ -54,10 +54,10 @@ const discoverItems: DiscoverItem[] = [
     badgeCount: 9
   },
   {
-    id: 'ai',
-    title: 'AI',
+    id: 'unishop.ai',
+    title: 'UNISHOP.AI',
     subtitle: 'back',
-    icon: <Image src="/discover/ai.png" alt="ai" width={30} height={30} />,
+    icon: <Image src="/discover/unishop.png" alt="unishop.ai" width={30} height={30} />,
     type: 'group'
     // badgeCount: 1
   },
@@ -69,9 +69,7 @@ const discoverItems: DiscoverItem[] = [
   {
     id: 'exchange',
     title: 'Uniswap.org exchange',
-    icon: (
-      <Image src="/discover/uniswap.png" alt="uniswap" width={30} height={30} />
-    ),
+    icon: <Image src="/discover/uniswap.png" alt="uniswap" width={30} height={30} />,
     type: 'group'
   },
   {
@@ -156,27 +154,27 @@ export default function DiscoverPage() {
             key={item.id}
             className={`overflow-hidden bg-white ${item.type && 'mb-2'}`}
           >
-            <div className="flex relative items-center p-4 cursor-pointer hover:bg-gray-50">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full mr-3">
+            <div className="flex relative items-center h-[50px] px-4 cursor-pointer hover:bg-gray-50">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full mr-3">
                 {item.icon}
               </div>
 
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center justify-between pr-2">
-                  <h3 className="font-medium text-base mr-2 truncate">
+                  <h3 className="font-medium text-sm mr-2 truncate">
                     {item.title}
                   </h3>
                   <div className="relative">
                     {item.subtitle && (
-                      <div className="text-sm text-gray-500 mt-0.5 flex items-center">
+                      <div className="text-xs text-gray-500 flex items-center">
                         {item.subtitle}
                         {item.image && (
                           <Image
                             src={item.image}
                             alt={item.title}
                             className="object-cover ml-1"
-                            width={25}
-                            height={25}
+                            width={20}
+                            height={20}
                           />
                         )}
                       </div>
@@ -184,7 +182,7 @@ export default function DiscoverPage() {
                     {item.badgeCount !== undefined && (
                       <Badge
                         variant="destructive"
-                        className="rounded-full p-0 absolute top-[1px] right-[-18px] h-4 w-4 min-w-[16px] text-[10px] flex items-center justify-center"
+                        className="rounded-full p-0 absolute top-[-2px] right-[-18px] h-4 w-4 min-w-[16px] text-[10px] flex items-center justify-center"
                       >
                         {item.badgeCount > 9 ? '9+' : item.badgeCount}
                       </Badge>
@@ -192,10 +190,10 @@ export default function DiscoverPage() {
                   </div>
                 </div>
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400 ml-2" />
+              <ChevronRight className="h-4 w-4 text-gray-400 ml-2" />
               {/* 下边框 */}
               {!item.type && (
-                <div className="border-t w-[calc(100%-4rem)] border-border absolute bottom-0 right-0"></div>
+                <div className="border-t w-[calc(100%-3.5rem)] border-border absolute bottom-0 right-0"></div>
               )}
             </div>
           </div>
