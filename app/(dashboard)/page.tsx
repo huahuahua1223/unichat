@@ -91,16 +91,8 @@ export default function ChatPage() {
           />
           BNB Chain
         </Button>
-        <Button variant="outline" className="text-xs">
-          {/* {address.substring(0, 6)}...
-          {address.substring(address.length - 4)} */}
-          {address.substring(0, address.length / 2)}
-          <br></br>
-          {address.substring(address.length / 2, address.length)}
-        </Button>
-        {/* <Button variant="outline" className="px-4 py-1 text-sm">
-          Connect wallet
-        </Button> */}
+        {/* 使用 AppKit 钱包连接按钮替换原有的地址显示 */}
+        <appkit-button />
         <Button variant="outline" className="flex items-center space-x-1">
           <div className="inline-block align-middle mr-1 w-4 h-4 rounded-full overflow-hidden">
             <Image

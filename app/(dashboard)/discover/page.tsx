@@ -124,9 +124,7 @@ export default function DiscoverPage() {
           />
           BNB Chain
         </Button>
-        <Button variant="outline" className="px-4 py-1 text-sm">
-          Connect wallet
-        </Button>
+        <appkit-button/>
         <Button variant="outline" className="flex items-center space-x-1">
           <div className="inline-block align-middle mr-1 w-4 h-4 rounded-full overflow-hidden">
             <Image

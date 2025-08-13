@@ -45,9 +45,7 @@ export default function ShopPage() {
             />
             BNB Chain
           </Button>
-          <Button variant="outline" className="px-4 py-1 text-sm">
-            Connect wallet
-          </Button>
+          <appkit-button />
           <Image src="/shop/web.png" alt="Logo" width={30} height={30} />
         </div>
       </div>
