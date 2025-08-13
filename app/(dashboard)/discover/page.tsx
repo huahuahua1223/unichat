@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 import {
   Search,
   CirclePlus,
@@ -30,18 +31,19 @@ interface DiscoverItem {
   badgeCount?: number;
   image?: string;
   type?: string;
+  href?: string;
 }
 
 const discoverItems: DiscoverItem[] = [
   {
-    id: 'circle',
-    title: 'Supply and demand circle',
-    subtitle: 'lenono',
+    id: 'airdrop',
+    title: 'Airdrop',
+    subtitle: '空投领取',
     icon: (
-      <Image src="/discover/Moment.png" alt="Moment" width={30} height={30} />
+      <Image src="/shop/airdrop1.png" alt="Airdrop" width={30} height={30} />
     ),
     type: 'group',
-    badgeCount: 8
+    href: '/airdrop'
   },
   {
     id: 'video',
@@ -107,6 +109,13 @@ const discoverItems: DiscoverItem[] = [
 
 export default function DiscoverPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const router = useRouter();
+
+  const handleItemClick = (item: DiscoverItem) => {
+    if (item.href) {
+      router.push(item.href);
+    }
+  };
 
   return (
     <div className="flex flex-col h-full">
@@ -154,7 +163,10 @@ export default function DiscoverPage() {
             key={item.id}
             className={`overflow-hidden bg-white ${item.type && 'mb-2'}`}
           >
-            <div className="flex relative items-center h-[50px] px-4 cursor-pointer hover:bg-gray-50">
+            <div 
+              className="flex relative items-center h-[50px] px-4 cursor-pointer hover:bg-gray-50"
+              onClick={() => handleItemClick(item)}
+            >
               <div className="flex items-center justify-center w-8 h-8 rounded-full mr-3">
                 {item.icon}
               </div>
