@@ -31,21 +31,21 @@ export function BottomNav() {
           badgeCount={10}
         />
         <NavItem
-          href="/shop"
+          href="/contacts"
           icon={
-            pathname === '/shop' ? (
+            pathname === '/contacts' ? (
               <Image
-                src="/bottom/shop-active.png"
-                alt="shop"
+                src="/bottom/contacts.png"
+                alt="contacts"
                 width={25}
                 height={25}
               />
             ) : (
-              <Image src="/bottom/shop.png" alt="shop" width={25} height={25} />
+              <Image src="/bottom/contacts.png" alt="contacts" width={25} height={25} />
             )
           }
-          label="shop"
-          active={pathname === '/shop'}
+          label="contacts"
+          active={pathname === '/contacts'}
         />
         <NavItem
           href="/discover"

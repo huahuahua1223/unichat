@@ -81,7 +81,7 @@ export default function ChatPage() {
     <div className="flex flex-col h-full">
       {/* 顶部导航栏 */}
       <div className="flex justify-between items-center py-4 px-1 bg-white">
-        <Button variant="outline" className="px-4 py-1 text-xs">
+        {/* <Button variant="outline" className="px-4 py-1 text-xs">
           <Image
             src="/top/bnb.png"
             alt="usa"
@@ -90,7 +90,7 @@ export default function ChatPage() {
             height={19}
           />
           BNB Chain
-        </Button>
+        </Button> */}
         {/* 使用 AppKit 钱包连接按钮替换原有的地址显示 */}
         <appkit-button />
         <Button variant="outline" className="flex items-center space-x-1">

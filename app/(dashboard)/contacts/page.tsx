@@ -35,7 +35,7 @@ export default function ShopPage() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" className="px-4 py-1 text-sm">
+          {/* <Button variant="outline" className="px-4 py-1 text-sm">
             <Image
               src="/top/bnb.png"
               alt="usa"
@@ -44,7 +44,7 @@ export default function ShopPage() {
               height={19}
             />
             BNB Chain
-          </Button>
+          </Button> */}
           <appkit-button />
           <Image src="/shop/web.png" alt="Logo" width={30} height={30} />
         </div>

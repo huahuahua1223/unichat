@@ -114,7 +114,7 @@ export default function DiscoverPage() {
     <div className="flex flex-col h-full">
       {/* 顶部导航 */}
       <div className="flex justify-evenly items-center p-4 bg-white">
-        <Button variant="outline" className="px-4 py-1 text-sm">
+        {/* <Button variant="outline" className="px-4 py-1 text-sm">
           <Image
             src="/top/bnb.png"
             alt="usa"
@@ -123,7 +123,7 @@ export default function DiscoverPage() {
             height={19}
           />
           BNB Chain
-        </Button>
+        </Button> */}
         <appkit-button/>
         <Button variant="outline" className="flex items-center space-x-1">
           <div className="inline-block align-middle mr-1 w-4 h-4 rounded-full overflow-hidden">
