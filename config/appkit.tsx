@@ -1,6 +1,10 @@
 import { cookieStorage, createStorage } from 'wagmi'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { mainnet, arbitrum, bsc } from '@reown/appkit/networks'
+import { 
+  // mainnet, 
+  arbitrum, 
+  // bsc 
+} from '@reown/appkit/networks'
 import type { Chain } from 'viem'
 
 // 从环境变量读取项目 ID
@@ -12,7 +16,11 @@ if (!projectId) {
 }
 
 // 定义支持的网络，显式类型化为非空的链数组
-export const networks: [Chain, ...Chain[]] = [mainnet, arbitrum, bsc]
+export const networks: [Chain, ...Chain[]] = [
+  // mainnet, 
+  arbitrum, 
+  // bsc 
+]
 
 // 创建 Wagmi 适配器实例
 export const wagmiAdapter = new WagmiAdapter({

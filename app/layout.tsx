@@ -6,8 +6,13 @@ import ContextProvider from 'context/AppKitProvider';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
-  title: 'UniChat - 移动端 Web3 社交平台',
-  description: '现代化移动端 Web3 社交平台'
+  title: 'UniChat - Web3 社交平台',
+  description: '现代化 Web3 社交平台',
+  icons: {
+    icon: [
+      { url: 'https://s10.aconvert.com/convert/p3r68-cdx67/aq5zv-znun4.svg', sizes: '32x32', type: 'image/png' },
+    ],
+  }
 };
 
 // RootLayout 必须是异步函数以使用 headers()

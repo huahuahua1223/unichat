@@ -7,7 +7,10 @@ import { createAppKit } from '@reown/appkit/react'
 // 从配置文件导入 config、networks、projectId 和 wagmiAdapter
 import { config, networks, projectId, wagmiAdapter } from 'config/appkit'
 // 单独导入默认网络
-import { mainnet } from '@reown/appkit/networks'
+import { 
+  // mainnet 
+  arbitrum 
+} from '@reown/appkit/networks'
 
 // 创建 React Query 客户端，用于管理缓存和数据同步
 const queryClient = new QueryClient()
@@ -15,9 +18,9 @@ const queryClient = new QueryClient()
 // AppKit 元数据配置
 const metadata = {
   name: 'UniChat', // 应用名称
-  description: '现代化移动端 Web3 社交平台', // 应用描述
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://unichat.app', // 应用 URL
-  icons: ['/favicon.ico'], // 应用图标
+  description: '现代化 Web3 社交平台', // 应用描述
+  url: typeof window !== 'undefined' ? window.location.origin : 'https://unichatv4.com', // 应用 URL
+  icons: ['/discover/unishop.png'], // Web3钱包连接界面显示的应用图标
 }
 
 // 在组件渲染周期外初始化 AppKit
@@ -32,7 +35,7 @@ if (!projectId) {
     projectId: projectId!, // Reown 项目 ID
     // 直接传递网络（类型现在从配置中正确推断）
     networks: networks, // 支持的区块链网络
-    defaultNetwork: mainnet, // 默认网络（以太坊主网）
+    defaultNetwork: arbitrum, // 默认网络（arbitrum）
     metadata, // 应用元数据
     features: { analytics: true }, // 启用分析功能
     themeMode: 'light', // 主题模式：浅色

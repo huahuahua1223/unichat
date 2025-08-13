@@ -26,7 +26,7 @@ export function BottomNav() {
               <Image src="/bottom/chat.png" alt="chat" width={25} height={25} />
             )
           }
-          label="chat"
+          label="Chats"
           active={pathname === '/'}
           badgeCount={10}
         />
@@ -44,7 +44,7 @@ export function BottomNav() {
               <Image src="/bottom/contacts.png" alt="contacts" width={25} height={25} />
             )
           }
-          label="contacts"
+          label="Contacts"
           active={pathname === '/contacts'}
         />
         <NavItem
@@ -66,7 +66,7 @@ export function BottomNav() {
               />
             )
           }
-          label="discover"
+          label="Discover"
           active={pathname === '/discover'}
         />
         <NavItem
@@ -83,7 +83,7 @@ export function BottomNav() {
               <Image src="/bottom/me.png" alt="me" width={25} height={25} />
             )
           }
-          label="me"
+          label="Me"
           active={pathname === '/me'}
         />
       </div>
