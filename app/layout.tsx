@@ -10,7 +10,7 @@ export const metadata = {
   description: '现代化 Web3 社交平台',
   icons: {
     icon: [
-      { url: 'https://s10.aconvert.com/convert/p3r68-cdx67/aq5zv-znun4.svg', sizes: '32x32', type: 'image/png' },
+      { url: '/discover/unishop.png' },
     ],
   }
 };
